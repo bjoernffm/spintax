@@ -1,0 +1,3 @@
+[submodule "Resources/doc/gh-pages"]
+	path = Resources/doc/gh-pages
+	url = https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle.git

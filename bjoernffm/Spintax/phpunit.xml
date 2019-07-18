@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# This file is part of the ChillDev Spintax library.
+#
+# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDev\Spintax
+-->
+<phpunit
+    colors="true"
+    bootstrap="vendor/autoload.php"
+    strict="true"
+>
+    <!-- test suites definitions -->
+    <testsuites>
+        <testsuite name="ChillDev DependencyInjection Extra">
+            <directory>./Tests</directory>
+            <exclude>./vendor</exclude>
+        </testsuite>
+    </testsuites>
+
+    <!-- code coverage configuration -->
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory suffix=".php">./Resources</directory>
+                <directory suffix=".php">./Tests</directory>
+                <directory suffix=".php">./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <!-- logging settings -->
+    <logging>
+        <log
+            type="coverage-html"
+            target="Resources/doc/coverage"
+            charset="utf-8"
+            highlight="true"
+        />
+        <log
+            type="coverage-text"
+            target="php://stdout"
+            charset="utf-8"
+        />
+        <log
+            type="coverage-clover"
+            target="Resources/doc/coverage/clover.xml"
+        />
+    </logging>
+</phpunit>

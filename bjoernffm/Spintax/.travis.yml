@@ -1,0 +1,24 @@
+##
+# This file is part of the ChillDev Spintax library.
+#
+# @author Rafal Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2014 © by Rafal Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDev\Spintax
+##
+
+#FIXME: https://github.com/travis-ci/travis-ci/issues/753
+
+language: "php"
+
+php:
+    - "5.4"
+    - "5.5"
+
+before_script:
+    - "composer --dev --no-progress --optimize-autoloader install"
+
+script: "make ci"
+
+after_script: "make coveralls"

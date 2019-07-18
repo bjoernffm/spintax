@@ -1,0 +1,16 @@
+##
+# This file is part of the ChillDev Spintax library.
+#
+# @author Rafal Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2014 © by Rafal Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDev\Spintax
+##
+
+#FIXME: https://github.com/travis-ci/travis-ci/issues/753
+
+service_name: "travis-ci"
+src_dir: "."
+coverage_clover: "Resources/doc/coverage/clover.xml"
+json_path: "Resources/doc/coverage/coveralls-upload.json"

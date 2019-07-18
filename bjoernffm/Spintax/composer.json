@@ -1,0 +1,48 @@
+{
+    "name": "bjoernffm/spintax",
+    "description": "Spintax {parsing|processing} library.",
+    "type": "library",
+    "keywords": [
+        "chilldev",
+        "spintax",
+        "content generator",
+        "seo"
+    ],
+    "homepage": "https://github.com/bjoernffm/spintax",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/bjoernffm/spintax/issues",
+        "source": "https://github.com/bjoernffm/spintax"
+    },
+    "authors": [
+        {
+            "name": "Rafał Wrzeszcz",
+            "email": "rafal.wrzeszcz@wrzasq.pl",
+            "homepage": "http://wrzasq.pl/",
+            "role": "creator,manager,architect,developer"
+        },
+        {
+            "name": "Chillout Development",
+            "email": "biuro@chilldev.pl",
+            "homepage": "http://chilldev.pl/",
+            "role": "owner"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "ext-xsl": "*",
+        "phpunit/phpunit": "3.7.29",
+        "phpmd/phpmd" : "1.5.0",
+        "sebastian/phpcpd": "2.0.0",
+        "squizlabs/php_codesniffer": "1.5.1",
+        "satooshi/php-coveralls": "0.6.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "bjoernffm\\Spintax": ""
+        }
+    },
+    "target-dir": "bjoernffm/Spintax"
+}
