@@ -1,36 +1,13 @@
 <?php
 
-/**
- * This file is part of the ChillDev Spintax library.
- *
- * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
- * @since 0.0.1
- * @package ChillDev\Spintax
- */
+declare(strict_types=1);
 
-namespace ChillDev\Spintax\Tests;
+use PHPUnit\Framework\TestCase;
+use bjoernffm\Spintax\Content;
 
-use PHPUnit_Framework_TestCase;
-
-use ChillDev\Spintax\Content;
-
-/**
- * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
- * @since 0.0.1
- * @package ChillDev\Spintax
- */
-class ContentTest extends PHPUnit_Framework_TestCase
+final class ContentTest extends TestCase
 {
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function constructor()
+    public function testConstructor(): void
     {
         $source = 'test';
         $node = new Content($source);
@@ -38,12 +15,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($source, $node->__toString(), 'Content::__construct() should set initial node content.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function setContent()
+    public function testSetContent(): void
     {
         $source = 'test';
         $node = new Content();
@@ -52,12 +24,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($source, $node->__toString(), 'Content::setContent() should set node content.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function addChild()
+    public function testAddChild(): void
     {
         $source = 'test';
         $node = new Content();
@@ -66,12 +33,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('{' . $source . '}', $node->__toString(), 'Content::addChild() should set node child.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function setNext()
+    public function testSetNext(): void
     {
         $source = 'test';
         $node = new Content();
@@ -80,12 +42,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($source, $node->__toString(), 'Content::setNext() should set node sibling.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function generateRandom()
+    public function testGenerateRandom(): void
     {
         $root = $this->buildTree();
 
@@ -99,12 +56,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertNotEmpty($path, 'Content::generate() should fill passed argument with evaluated path.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function generateDefined()
+    public function testGenerateDefined(): void
     {
         $root = $this->buildTree();
 
@@ -112,12 +64,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('I love PHP.', $root->generate($path), 'Content::generate() should generate particular variant if path is defined.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function generatePartial()
+    public function testGeneratePartial(): void
     {
         $root = $this->buildTree();
 
@@ -131,24 +78,14 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertCount(2, $path, 'Content::generate() should fill the path with missing elements.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function dump()
+    public function testDump(): void
     {
         $root = $this->buildTree();
 
         $this->assertEquals('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.', $root->dump(), 'Content::dump() should generate spintax string out of tree structure.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function getPaths()
+    public function testGetPaths(): void
     {
         $root = $this->buildTree();
 
@@ -167,12 +104,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function explicitCount()
+    public function testExplicitCount(): void
     {
         $node = new Content();
         $node->addChild(new Content());
@@ -182,12 +114,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(2, $node->count(), 'Content::count() should calculate number of possible permutations.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function implicitCount()
+    public function testImplicitCount(): void
     {
         $node = new Content();
         $node->addChild(new Content());
@@ -197,12 +124,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertCount(2, $node, 'Content::count() should handle internal PHP counting.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function toStringConversion()
+    public function testToStringConversion(): void
     {
         $source = 'test';
         $node = new Content($source);
@@ -210,12 +132,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($source, $node->__toString(), 'Content::__toString() should dump spintax content.');
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function toStringCasting()
+    public function testToStringCasting(): void
     {
         $source = 'test';
         $node = new Content($source);
@@ -223,12 +140,7 @@ class ContentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($source, (string) $node, 'Content::__toString() should handle conversion to string.');
     }
 
-    /**
-     * @return Content
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    protected function buildTree()
+    protected function buildTree(): Content
     {
         $root = new Content('I ');
         $node = new Content('love ');

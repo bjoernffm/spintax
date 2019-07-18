@@ -1,51 +1,13 @@
 <?php
 
-/**
- * This file is part of the ChillDev Spintax library.
- *
- * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
- * @since 0.0.1
- * @package ChillDev\Spintax
- */
+declare(strict_types=1);
 
-namespace ChillDev\Spintax\Tests;
+use PHPUnit\Framework\TestCase;
+use bjoernffm\Spintax\Parser;
 
-use PHPUnit_Framework_TestCase;
-
-use ChillDev\Spintax\Parser;
-
-/**
- * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
- * @since 0.0.1
- * @package ChillDev\Spintax
- */
-class ParserTest extends PHPUnit_Framework_TestCase
+final class ParserTest extends TestCase
 {
-    /**
-     * @test
-     * @param string $source
-     * @version 0.0.1
-     * @since 0.0.1
-     * @dataProvider parseDataProvider
-     */
-    public function parse($source)
-    {
-        $spintax = Parser::parse($source);
-
-        $this->assertInstanceOf('ChillDev\\Spintax\\Content', $spintax, 'Parser::parse() should return instance of ChillDev\\Spintax\\Content.');
-        $this->assertEquals($source, (string) $spintax, 'Parser::parse() should map the spintax source as 1-to-1 logical tree.');
-    }
-
-    /**
-     * @return array
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function parseDataProvider()
+    public function parseDataProvider(): array
     {
         return [
             ['I {love {PHP|Java|C|C++|JavaScript|Python}|{hate|can\'t stand} Ruby}.'],
@@ -54,12 +16,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
         ];
     }
 
-    /**
-     * @test
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function replicate()
+    public function testReplicate(): void
     {
         $source = 'I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.';
         $this->assertEquals('I love PHP.', Parser::replicate($source, '0,0'));

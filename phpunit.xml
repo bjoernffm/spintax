@@ -10,9 +10,7 @@
 -->
 <phpunit
     colors="true"
-    bootstrap="vendor/autoload.php"
-    strict="true"
->
+    bootstrap="vendor/autoload.php">
     <!-- test suites definitions -->
     <testsuites>
         <testsuite name="ChillDev DependencyInjection Extra">
@@ -38,13 +36,10 @@
         <log
             type="coverage-html"
             target="Resources/doc/coverage"
-            charset="utf-8"
-            highlight="true"
         />
         <log
             type="coverage-text"
             target="php://stdout"
-            charset="utf-8"
         />
         <log
             type="coverage-clover"
