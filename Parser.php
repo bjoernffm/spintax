@@ -10,7 +10,7 @@
  * @package ChillDev\Spintax
  */
 
-namespace ChillDev\Spintax;
+namespace bjoernffm\Spintax;
 
 /**
  * Spintax parser.
