@@ -43,6 +43,5 @@
         "psr-0": {
             "bjoernffm\\Spintax": ""
         }
-    },
-    "target-dir": "bjoernffm/Spintax"
+    }
 }
