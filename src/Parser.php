@@ -8,6 +8,7 @@ class Parser
      * Parses spintax article.
      *
      * @param string $string Source content.
+     *
      * @return Content Parsed spintax tree.
      */
     public static function parse($string)
@@ -64,6 +65,7 @@ class Parser
      *
      * @param string|Content $content Source content (or already parsed spintax tree).
      * @param string|int[]   $path    Path to use to generate the article.
+     *
      * @return string Generated article content.
      */
     public static function replicate($content, $path)
