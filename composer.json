@@ -35,18 +35,14 @@
         }
     ],
     "require": {
-        "php": ">=5.4"
+        "php": ">=7.2"
     },
     "require-dev": {
-        "ext-xsl": "*",
-        "phpunit/phpunit": "^8",
-        "squizlabs/php_codesniffer": "^3.4",
-        "sebastian/phpcpd": "^4.1",
-        "phpmd/phpmd": "^2.6"
+        "phpunit/phpunit": "^8.4"
     },
     "autoload": {
-        "psr-4": {
-            "bjoernffm\\Spintax\\": ""
-        }
+        "classmap": [
+            "src/"
+        ]
     }
 }
