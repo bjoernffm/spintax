@@ -5,9 +5,10 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
+ *
  * @version 0.0.1
+ *
  * @since 0.0.1
- * @package ChillDev\Spintax
  */
 
 namespace bjoernffm\Spintax;
@@ -17,9 +18,10 @@ namespace bjoernffm\Spintax;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
+ *
  * @version 0.0.1
+ *
  * @since 0.0.1
- * @package ChillDev\Spintax
  */
 class Parser
 {
@@ -27,8 +29,11 @@ class Parser
      * Parses spintax article.
      *
      * @param string $string Source content.
+     *
      * @return Content Parsed spintax tree.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public static function parse($string)
@@ -76,6 +81,7 @@ class Parser
         }
 
         $current->setContent($string);
+
         return $root;
     }
 
@@ -83,9 +89,12 @@ class Parser
      * Reproduces article content for specified path.
      *
      * @param string|Content $content Source content (or already parsed spintax tree).
-     * @param string|int[] $path Path to use to generate the article.
+     * @param string|int[]   $path    Path to use to generate the article.
+     *
      * @return string Generated article content.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public static function replicate($content, $path)
