@@ -26,6 +26,7 @@ class Content implements Countable
      * Sets content value.
      *
      * @param string $content Text content.
+     *
      * @return self Self instance.
      */
     public function setContent($content)
@@ -39,6 +40,7 @@ class Content implements Countable
      * Adds child node.
      *
      * @param self $child Sub-content.
+     *
      * @return self Self instance.
      */
     public function addChild(self $child)
@@ -52,6 +54,7 @@ class Content implements Countable
      * Sets next node.
      *
      * @param self $next Next node.
+     *
      * @return self Self instance.
      */
     public function setNext(self $next)
@@ -66,6 +69,7 @@ class Content implements Countable
      *
      * @param int[] &$path  Path to use for the content.
      * @param int   &$index Internal pointer for path array.
+     *
      * @return string Generated content.
      */
     public function generate(array &$path = [], &$index = 0)
