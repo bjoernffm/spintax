@@ -3,19 +3,19 @@
 ![GitHub](https://img.shields.io/github/license/bjoernffm/step-functions)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bjoernffm/step-functions)
 ![GitHub top language](https://img.shields.io/github/languages/top/bjoernffm/step-functions)
-[![StyleCI](https://github.styleci.io/repos/197543792/shield?branch=master)](https://github.styleci.io/repos/197543792)
+[![Build Status](https://travis-ci.org/bjoernffm/spintax.svg?branch=master)](https://travis-ci.org/bjoernffm/spintax)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d8ccfe0e2ce0401ba371095624461f74)](https://www.codacy.com/manual/bjoernffm/spintax)
+[![StyleCI](https://github.styleci.io/repos/197543792/shield?branch=master&style=flat)](https://github.styleci.io/repos/197543792)
 
 **Spintax** is a library which offers implementation of some commonly used patterns used in **Symfony2** DI.
 
 ## Installation
 
-This library is provided as [Composer package](https://packagist.org/packages/bjoernffm/spintax). To install it simply add following dependency definition to your `composer.json` file:
+This library is provided as [Composer package](https://packagist.org/packages/bjoernffm/spintax). To install it simply execute the following command:
 
 ```plain
 composer require bjoernffm/spintax
 ```
-
-Replace `dev-master` with different constraint if you want to use specific version.
 
 **Note:** This library requires **PHP 7.2+**.
 
