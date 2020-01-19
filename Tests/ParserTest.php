@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
 use bjoernffm\Spintax\Parser;
+use PHPUnit\Framework\TestCase;
 
 final class ParserTest extends TestCase
 {

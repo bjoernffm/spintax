@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
 use bjoernffm\Spintax\Content;
+use PHPUnit\Framework\TestCase;
 
 final class ContentTest extends TestCase
 {
@@ -30,7 +30,7 @@ final class ContentTest extends TestCase
         $node = new Content();
         $node->addChild(new Content($source));
 
-        $this->assertEquals('{' . $source . '}', $node->__toString(), 'Content::addChild() should set node child.');
+        $this->assertEquals('{'.$source.'}', $node->__toString(), 'Content::addChild() should set node child.');
     }
 
     public function testSetNext(): void
