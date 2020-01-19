@@ -26,6 +26,12 @@
             "email": "biuro@chilldev.pl",
             "homepage": "http://chilldev.pl/",
             "role": "owner"
+        },
+        {
+            "name": "Bjoern Ebbrecht",
+            "email": "bjoern.ebbrecht@gmail.com",
+            "homepage": "https://github.com/bjoernffm",
+            "role": "owner"
         }
     ],
     "require": {
