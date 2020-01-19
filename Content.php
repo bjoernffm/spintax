@@ -5,9 +5,10 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
+ *
  * @version 0.0.1
+ *
  * @since 0.0.1
- * @package ChillDev\Spintax
  */
 
 namespace bjoernffm\Spintax;
@@ -19,9 +20,10 @@ use Countable;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
+ *
  * @version 0.0.1
+ *
  * @since 0.0.1
- * @package ChillDev\Spintax
  */
 class Content implements Countable
 {
@@ -29,7 +31,9 @@ class Content implements Countable
      * Node raw value.
      *
      * @var string
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     protected $content;
@@ -38,7 +42,9 @@ class Content implements Countable
      * Possible sub-contents.
      *
      * @var self[]
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     protected $children = [];
@@ -47,7 +53,9 @@ class Content implements Countable
      * Next node value.
      *
      * @var self
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     protected $next;
@@ -56,7 +64,9 @@ class Content implements Countable
      * Builds node representaiton for given string vlaue.
      *
      * @param string $content Text content.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function __construct($content = '')
@@ -68,8 +78,11 @@ class Content implements Countable
      * Sets content value.
      *
      * @param string $content Text content.
+     *
      * @return self Self instance.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function setContent($content)
@@ -83,11 +96,14 @@ class Content implements Countable
      * Adds child node.
      *
      * @param self $child Sub-content.
+     *
      * @return self Self instance.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
-    public function addChild(Content $child)
+    public function addChild(self $child)
     {
         $this->children[] = $child;
 
@@ -98,11 +114,14 @@ class Content implements Countable
      * Sets next node.
      *
      * @param self $next Next node.
+     *
      * @return self Self instance.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
-    public function setNext(Content $next)
+    public function setNext(self $next)
     {
         $this->next = $next;
 
@@ -112,10 +131,13 @@ class Content implements Countable
     /**
      * Generates plain content (optionally based on pre-defined path).
      *
-     * @param int[] &$path Path to use for the content.
-     * @param int &$index Internal pointer for path array.
+     * @param int[] &$path  Path to use for the content.
+     * @param int   &$index Internal pointer for path array.
+     *
      * @return string Generated content.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function generate(array &$path = [], &$index = 0)
@@ -129,7 +151,7 @@ class Content implements Countable
                 $path[$index] = \rand(0, count($this->children) - 1);
             }
             $option = $path[$index];
-            ++$index;
+            $index++;
             $content .= $this->children[$option]->generate($path, $index);
         }
 
@@ -145,7 +167,9 @@ class Content implements Countable
      * Dumps source spintax format.
      *
      * @return string Merged content.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function dump()
@@ -158,7 +182,7 @@ class Content implements Countable
             foreach ($this->children as $child) {
                 $options[] = $child->dump();
             }
-            $content .= '{' . implode('|', $options) . '}';
+            $content .= '{'.implode('|', $options).'}';
         }
 
         // continue further
@@ -173,7 +197,9 @@ class Content implements Countable
      * Returns list of all possible paths.
      *
      * @return array List of all possible paths.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function getPaths()
@@ -199,7 +225,9 @@ class Content implements Countable
      * Returns number of possible combinations.
      *
      * @return int Number of possible combinations.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function count()
@@ -212,7 +240,7 @@ class Content implements Countable
             foreach ($this->children as $child) {
                 $count += \count($child);
             }
-            --$count;
+            $count--;
         }
 
         // also use further content
@@ -227,7 +255,9 @@ class Content implements Countable
      * Returns plain representation.
      *
      * @return string Merged content.
+     *
      * @version 0.0.1
+     *
      * @since 0.0.1
      */
     public function __toString()
