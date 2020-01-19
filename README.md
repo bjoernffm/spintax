@@ -1,14 +1,8 @@
-<!---
-# This file is part of the ChillDev Spintax library.
-#
-# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2014 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
-# @since 0.0.1
-# @package ChillDev\Spintax
--->
-
 # ChillDev Spintax
+
+![GitHub](https://img.shields.io/github/license/bjoernffm/step-functions)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bjoernffm/step-functions)
+![GitHub top language](https://img.shields.io/github/languages/top/bjoernffm/step-functions)
 
 **ChillDevSpintax** is a library which offers implementation of some commonly used patterns used in **Symfony2** DI.
 
