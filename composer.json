@@ -3,7 +3,6 @@
     "description": "Spintax {parsing|processing} library.",
     "type": "library",
     "keywords": [
-        "chilldev",
         "spintax",
         "content generator",
         "seo"
@@ -35,10 +34,10 @@
         }
     ],
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.4"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "classmap": [
