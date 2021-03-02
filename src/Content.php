@@ -29,7 +29,7 @@ class Content implements Countable
      *
      * @return self Self instance.
      */
-    public function setContent(string $content) : self
+    public function setContent(string $content): self
     {
         $this->content = $content;
 
@@ -43,7 +43,7 @@ class Content implements Countable
      *
      * @return self Self instance.
      */
-    public function addChild(self $child) : self
+    public function addChild(self $child): self
     {
         $this->children[] = $child;
 
@@ -57,7 +57,7 @@ class Content implements Countable
      *
      * @return self Self instance.
      */
-    public function setNext(self $next) : self
+    public function setNext(self $next): self
     {
         $this->next = $next;
 
@@ -72,7 +72,7 @@ class Content implements Countable
      *
      * @return string Generated content.
      */
-    public function generate(array &$path = [], int &$index = 0) : string
+    public function generate(array &$path = [], int &$index = 0): string
     {
         $content = $this->content;
 
@@ -100,7 +100,7 @@ class Content implements Countable
      *
      * @return string Merged content.
      */
-    public function dump() : string
+    public function dump(): string
     {
         $content = $this->content;
 
@@ -126,7 +126,7 @@ class Content implements Countable
      *
      * @return array List of all possible paths.
      */
-    public function getPaths() : array
+    public function getPaths(): array
     {
         if (empty($this->children)) {
             return [[]];
@@ -150,7 +150,7 @@ class Content implements Countable
      *
      * @return int Number of possible combinations.
      */
-    public function count() : int
+    public function count(): int
     {
         // self-caontained at least
         $count = 1;
@@ -176,7 +176,7 @@ class Content implements Countable
      *
      * @return string Merged content.
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->dump();
     }
