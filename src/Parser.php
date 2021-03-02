@@ -11,7 +11,7 @@ class Parser
      *
      * @return Content Parsed spintax tree.
      */
-    public static function parse(string $string) : Content
+    public static function parse(string $string): Content
     {
         $root = new Content();
 
@@ -68,7 +68,7 @@ class Parser
      *
      * @return string Generated article content.
      */
-    public static function replicate($content, $path) : string
+    public static function replicate($content, $path): string
     {
         // parse content
         if (!$content instanceof Content) {
