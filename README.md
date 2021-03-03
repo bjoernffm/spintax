@@ -1,8 +1,8 @@
 # Spintax
 
-![GitHub](https://img.shields.io/github/license/bjoernffm/step-functions)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/bjoernffm/step-functions)
-![GitHub top language](https://img.shields.io/github/languages/top/bjoernffm/step-functions)
+![GitHub](https://img.shields.io/github/license/bjoernffm/spintax)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bjoernffm/spintax)
+![GitHub top language](https://img.shields.io/github/languages/top/bjoernffm/spintax)
 [![Build Status](https://travis-ci.org/bjoernffm/spintax.svg?branch=master)](https://travis-ci.org/bjoernffm/spintax)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d8ccfe0e2ce0401ba371095624461f74)](https://www.codacy.com/manual/bjoernffm/spintax)
 [![StyleCI](https://github.styleci.io/repos/197543792/shield?branch=master&style=flat)](https://github.styleci.io/repos/197543792)
