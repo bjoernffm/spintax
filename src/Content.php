@@ -6,11 +6,11 @@ use Countable;
 
 class Content implements Countable
 {
-    protected string $content;
+    protected $content;
 
-    protected array $children = [];
+    protected $children = [];
 
-    protected self $next;
+    protected $next;
 
     /**
      * Builds node representaiton for given string value.
