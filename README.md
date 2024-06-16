@@ -3,8 +3,8 @@
 ![GitHub](https://img.shields.io/github/license/bjoernffm/spintax)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bjoernffm/spintax)
 ![GitHub top language](https://img.shields.io/github/languages/top/bjoernffm/spintax)
-[![Build Status](https://travis-ci.org/bjoernffm/spintax.svg?branch=master)](https://travis-ci.org/bjoernffm/spintax)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d8ccfe0e2ce0401ba371095624461f74)](https://www.codacy.com/manual/bjoernffm/spintax)
+[![PHP Composer](https://github.com/bjoernffm/spintax/actions/workflows/php.yml/badge.svg)](https://github.com/bjoernffm/spintax/actions/workflows/php.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d8ccfe0e2ce0401ba371095624461f74)](https://app.codacy.com/gh/bjoernffm/spintax/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![StyleCI](https://github.styleci.io/repos/197543792/shield?branch=master&style=flat)](https://github.styleci.io/repos/197543792)
 
 **Spintax** is a library which offers implementation of some commonly used patterns used in **Symfony2** DI.

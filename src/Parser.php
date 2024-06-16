@@ -30,19 +30,17 @@ class Parser
             $string = substr($part, 1);
 
             switch ($token) {
-                // start of new choice
                 case '{':
                     // stack parent
                     $parents[] = $parent;
                     $parent = $current;
-                    // next option
+
                 case '|':
                     // create child node
                     $current = new Content();
                     $parent->addChild($current);
                     break;
 
-                    // end of subset
                 case '}':
                     // move forward
                     $current = new Content();
