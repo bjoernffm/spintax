@@ -35,14 +35,14 @@ class Parser
                     // stack parent
                     $parents[] = $parent;
                     $parent = $current;
-                // next option
+                    // next option
                 case '|':
                     // create child node
                     $current = new Content();
                     $parent->addChild($current);
                     break;
 
-                // end of subset
+                    // end of subset
                 case '}':
                     // move forward
                     $current = new Content();
