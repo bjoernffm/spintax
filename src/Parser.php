@@ -19,12 +19,13 @@ class Parser
         $current = $root;
         $parent = $root;
         $parents = [];
-        $tokens = '{}|';
 
         // loop through the string looking for spintax tokens
-        $part = strpbrk($string, $tokens);
+        $part = strpbrk($string, '{}');
+
         while (false !== $part) {
             $token = $part[0];
+
             $current->setContent(substr($string, 0, -strlen($part)));
             $string = substr($part, 1);
 
@@ -52,7 +53,10 @@ class Parser
                     break;
             }
 
-            $part = strpbrk($string, $tokens);
+            $part = strpbrk($string, '{}');
+            if (count($parents) > 0) {
+                $part = strpbrk($string, '{|}');
+            }
         }
 
         $current->setContent($string);
